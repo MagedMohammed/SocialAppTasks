@@ -113,12 +113,6 @@
                                 <state key="normal" title="Save Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadios">
-                                        <real key="value" value="12.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePost:" destination="YAH-Bz-4DR" eventType="touchUpInside" id="zGy-FP-NR3"/>
                                 </connections>
@@ -137,10 +131,12 @@
                     <navigationItem key="navigationItem" title="Edit your Post" id="jqg-YZ-QGn"/>
                     <connections>
                         <outlet property="bodyTexetView" destination="8PP-sA-DhF" id="XXI-1e-GDV"/>
-                        <outlet property="titleLabel" destination="c3h-Yo-CRI" id="YAf-K4-Ol1"/>
+                        <outlet property="titleTextField" destination="c3h-Yo-CRI" id="AZ7-JY-FYP"/>
+                        <segue destination="WvL-4U-q0S" kind="unwind" identifier="editPost" unwindAction="refreshTableView:" id="P7r-dJ-VBn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0V-9i-vel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WvL-4U-q0S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1710" y="-5"/>
         </scene>

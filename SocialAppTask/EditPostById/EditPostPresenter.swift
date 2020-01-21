@@ -31,12 +31,24 @@ class EditPostPresenter : EditPostPresenterProtocol {
         Request.getData(routerCase: Router.edit(parameters)) { (data:Posts?, error) in
             if let data = data, error == nil {
                 self.view.showAlert(title: "Add Successed", message: "Your post \(title) add successfully")
+                self.view.updateDone(data: data)
             }
         }
     }
     
     func editPost(title: String, userId: Int, body: String) {
+        let parameters = [
+            "userId": userId,
+            "title": title,
+            "body": body
+            ] as [String : Any]
         
+        Request.getData(routerCase: Router.edit(parameters)) { (data:Posts?, error) in
+            if let data = data, error == nil {
+                self.view.showAlert(title: "Add Successed", message: "Your post \(title) add successfully")
+                self.view.updateDone(data: data)
+            }
+        }
     }
     
     

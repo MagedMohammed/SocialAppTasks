@@ -56,6 +56,11 @@ class PostListViewControoler: UIViewController {
     
     //    MARK:- Action
     
+    @IBAction func refreshTableView(_ segue:UIStoryboardSegue){
+        print(segue.destination)
+    }
+    
+    
 }
 
 extension PostListViewControoler: PostListViewProtocol{

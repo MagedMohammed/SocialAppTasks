@@ -10,21 +10,24 @@ import UIKit
 
 
 protocol  EditPostViewProtocol : ShowAlertProtocol {
-    func updateDone()
+    func updateDone(data:Posts)
 }
 
 class EditPostViewController: UIViewController {
     //    MARK:- Outlet
-    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTexetView: UITextView!
     
     
     //    MARK:- Properties
     var postData:Posts?
+    var segueId = "editPost"
+    var presenter:EditPostPresenterProtocol!
     
     //    MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = EditPostPresenter(view: self)
         if let post = self.postData{
             self.setDataForEdit(data: post)
         }
@@ -35,26 +38,32 @@ class EditPostViewController: UIViewController {
     
     func setDataForEdit(data:Posts){
         self.bodyTexetView.text = data.body ?? ""
-        self.titleLabel.text = data.title ?? ""
+        self.titleTextField.text = data.title ?? ""
     }
     //    MARK:- Action
     
     @IBAction func savePost(_ sender: UIButton) {
+        guard let title = titleTextField.text, !title.isEmpty else{return}
+        guard let body = bodyTexetView.text, !body.isEmpty else{return}
+        let userId = self.postData?.userId ?? 1
         if self.postData != nil {
-            
+            self.presenter.editPost(title: title, userId: userId, body: body)
         }else{
-            
+             self.presenter.addPost(title: title, userId: userId, body: body)
         }
     }
-    
 }
+
 extension EditPostViewController : EditPostViewProtocol{
-    func updateDone() {
-        performSegue(withIdentifier: "", sender: nil)
+    func updateDone(data:Posts) {
+        performSegue(withIdentifier: segueId, sender: nil)
     }
     
     func showAlert(title: String, message: String) {
-        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
 
