@@ -1,0 +1,6 @@
+framework module Pods_SocialAppTask {
+  umbrella header "Pods-SocialAppTask-umbrella.h"
+
+  export *
+  module * { export * }
+}

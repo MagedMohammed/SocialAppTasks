@@ -1,0 +1,6 @@
+framework module Pods_SocialAppTask_SocialAppTaskUITests {
+  umbrella header "Pods-SocialAppTask-SocialAppTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
