@@ -24,11 +24,7 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
+
     
 //    MARK:- Method
     func setCell(title:String, id:Int, body:String){
