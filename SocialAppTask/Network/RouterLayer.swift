@@ -15,6 +15,7 @@ enum Router: URLRequestConvertible {
     case Comments(Int)
     case posts
     case create([String: Any])
+    case edit([String: Any])
     case delete(Int)
     
     func asURLRequest() throws -> URLRequest {
@@ -26,6 +27,8 @@ enum Router: URLRequestConvertible {
                 return .post
             case .delete:
                 return .delete
+            case .edit:
+                return .patch
             }
         }
         
@@ -35,6 +38,8 @@ enum Router: URLRequestConvertible {
                 return nil
             case .create(let newPost):
                 return (newPost)
+            case .edit(let editPost):
+                return editPost
             }
         }()
         
@@ -50,6 +55,8 @@ enum Router: URLRequestConvertible {
                 relativePath = "/posts/\(id)"
             case .posts:
                 relativePath = "posts/"
+            case .edit(_):
+                relativePath = "posts"
             }
             
             var url = URL(string: Router.baseURLString)!

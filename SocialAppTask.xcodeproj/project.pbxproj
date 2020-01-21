@@ -13,6 +13,8 @@
 		16247BA523D6E8590085935A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16247BA423D6E8590085935A /* Assets.xcassets */; };
 		16247BB323D6E8590085935A /* SocialAppTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16247BB223D6E8590085935A /* SocialAppTaskTests.swift */; };
 		16247BBE23D6E8590085935A /* SocialAppTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16247BBD23D6E8590085935A /* SocialAppTaskUITests.swift */; };
+		16841DC323D703EB00122E13 /* ShowAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16841DC223D703EB00122E13 /* ShowAlertProtocol.swift */; };
+		16841DC523D7041800122E13 /* EditPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16841DC423D7041800122E13 /* EditPostPresenter.swift */; };
 		16A63CB423D6FA4300F233B4 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A63CA323D6FA4300F233B4 /* EditPostViewController.swift */; };
 		16A63CB523D6FA4300F233B4 /* PostsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A63CA623D6FA4300F233B4 /* PostsListPresenter.swift */; };
 		16A63CB623D6FA4300F233B4 /* PostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A63CA823D6FA4300F233B4 /* PostsRequest.swift */; };
@@ -61,6 +63,8 @@
 		16247BB923D6E8590085935A /* SocialAppTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16247BBD23D6E8590085935A /* SocialAppTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppTaskUITests.swift; sourceTree = "<group>"; };
 		16247BBF23D6E8590085935A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16841DC223D703EB00122E13 /* ShowAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertProtocol.swift; sourceTree = "<group>"; };
+		16841DC423D7041800122E13 /* EditPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostPresenter.swift; sourceTree = "<group>"; };
 		16A63CA323D6FA4300F233B4 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		16A63CA623D6FA4300F233B4 /* PostsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsListPresenter.swift; sourceTree = "<group>"; };
 		16A63CA823D6FA4300F233B4 /* PostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsRequest.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		16247B9923D6E8570085935A /* SocialAppTask */ = {
 			isa = PBXGroup;
 			children = (
+				16841DC123D703C500122E13 /* Confuger */,
 				16A63CA223D6FA4300F233B4 /* EditPostById */,
 				16A63CAE23D6FA4300F233B4 /* Network */,
 				16A63CA423D6FA4300F233B4 /* Posts */,
@@ -178,10 +183,19 @@
 			path = SocialAppTaskUITests;
 			sourceTree = "<group>";
 		};
+		16841DC123D703C500122E13 /* Confuger */ = {
+			isa = PBXGroup;
+			children = (
+				16841DC223D703EB00122E13 /* ShowAlertProtocol.swift */,
+			);
+			path = Confuger;
+			sourceTree = "<group>";
+		};
 		16A63CA223D6FA4300F233B4 /* EditPostById */ = {
 			isa = PBXGroup;
 			children = (
 				16A63CA323D6FA4300F233B4 /* EditPostViewController.swift */,
+				16841DC423D7041800122E13 /* EditPostPresenter.swift */,
 			);
 			path = EditPostById;
 			sourceTree = "<group>";
@@ -492,6 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				16247B9D23D6E8570085935A /* ViewController.swift in Sources */,
+				16841DC523D7041800122E13 /* EditPostPresenter.swift in Sources */,
+				16841DC323D703EB00122E13 /* ShowAlertProtocol.swift in Sources */,
 				16A63CB723D6FA4300F233B4 /* Posts.swift in Sources */,
 				16A63CB623D6FA4300F233B4 /* PostsRequest.swift in Sources */,
 				16A63CB823D6FA4300F233B4 /* PostTableViewCell.swift in Sources */,
